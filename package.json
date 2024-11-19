@@ -1,0 +1,26 @@
+{
+  "name": "new-app",
+  "version": "1.0.0",
+  "description": "This is a template for web applications",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env app.js",
+    "dev": "node --watch --env-file=.env app.js",
+    "build": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch"
+  },
+  "author": "Yonatan Aviv",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.15"
+  }
+}

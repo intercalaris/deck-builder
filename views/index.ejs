@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon TCG Pocket Deck Builder</title>
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-16">
+        <% if (typeof name !== 'undefined') { %>
+            <div class="max-w-md mx-auto bg-white p-10 rounded-lg shadow-md">
+                <h1 class="text-3xl font-bold mb-8 text-center">Welcome to the Pokemon TCG Pocket Deck Builder</h1>
+                <p class="text-lg mb-12 text-center">Hello! <%= name %> are you ready to create the best deck ever?</p>
+                <div class="flex justify-center">
+                    <a href="decks" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">My Decks</a>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" id="close-session">Log out</button>
+                </div>
+            </div>
+            <% } %>
+        <% if (typeof name === 'undefined' ) { %>    
+        <div class="max-w-md mx-auto bg-white p-10 rounded-lg shadow-md">
+            <h1 class="text-3xl font-bold mb-8 text-center">Welcome to the Pokemon TCG Pocket Deck Builder</h1>
+            <p class="text-lg mb-12 text-center">Create and manage your Pokemon TCG decks on the go.</p>
+            <div class="flex justify-center">
+                <a href="login" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">Log In</a>
+                <a href="signup" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Sign Up</a>
+            </div>
+        </div>
+        <% } %>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>
