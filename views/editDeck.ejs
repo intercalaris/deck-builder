@@ -120,7 +120,6 @@
         // Initialize card counter
         let cardCount = <%= deck.cards.length %>;
 
-        // Function to add new card field
         function addCardField() {
             const cardList = document.getElementById('cardList');
             const newCard = `
@@ -174,7 +173,6 @@
             cardCount++;
         }
 
-        // Handle logout
         const logoutButton = document.getElementById('close-session');
         logoutButton?.addEventListener('click', async (e) => {
             e.preventDefault();
@@ -186,18 +184,15 @@
             }
         });
 
-        // Handle form submission
         document.getElementById('deckForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(e.target);
             
-            // Collect form data
             const deckData = {
                 name: formData.get('name'),
                 cards: []
             };
 
-            // Process card data
             for (let i = 0; i < cardCount; i++) {
                 const cardName = formData.get(`cards[${i}][name]`);
                 const cardType = formData.get(`cards[${i}][type]`);
@@ -208,24 +203,20 @@
             }
 
             try {
-                // Send update request
                 await fetch('/decks/<%= deck._id %>', {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(deckData)
                 });
                 
-                // Redirect after successful update
                 setTimeout(() => {
                     window.location.href = '/decks';
                 }, 2000);
             } catch (error) {
-                // Show error message
                 showError('Error updating deck');
             }
         });
 
-        // Helper function to show error messages
         function showError(message) {
             const alertDiv = document.createElement('div');
             alertDiv.className = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4';

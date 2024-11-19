@@ -18,8 +18,6 @@ const PORT = process.env.PORT || 8000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Connect to Database
-// mongoose.connect("mongodb://localhost:27017/DeckBuilder");
 connectToDB();
 
 
